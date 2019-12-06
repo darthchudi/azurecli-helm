@@ -13,12 +13,12 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 # Set version
 ENV HELM_LATEST_VERSION="v2.9.1"
 # Add bash support to image
-RUN apk add --no-cache bash make
+RUN apk add --no-cache bash
 # Add Azure CLI
 RUN \
   apk update && \
-  apk add bash py-pip && \
-  apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python-dev make && \
+  apk add bash py-pip make && \
+  apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python-dev && \
   pip install azure-cli && \
   apk del --purge build 
 # Add Helm
