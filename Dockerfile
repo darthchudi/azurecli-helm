@@ -13,7 +13,7 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 # Set version
 ENV HELM_LATEST_VERSION="v2.9.1"
 # Add bash support to image
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash make
 # Add Azure CLI
 RUN \
   apk update && \
